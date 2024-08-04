@@ -4,21 +4,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Sudharshan Venkataraman</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: linear-gradient(to right, #1c1c1c, #383838);
+            color: #fff;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: #2c3e50;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #ecf0f1;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ecf0f1;
+            padding: 10px 20px;
+            background: #34495e;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover {
+            background: #1abc9c;
+        }
+
+        #projects {
+            text-align: center;
+            padding: 50px 20px;
+            background: url('https://source.unsplash.com/random/1600x900') no-repeat center center/cover;
+            position: relative;
+            color: #fff;
+        }
+
+        #projects::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        #projects h2 {
+            position: relative;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        #projects ul {
+            position: relative;
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        #projects li {
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 20px;
+            background: #2c3e50;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+            color: #bdc3c7;
+        }
+
+        .back-home {
+            display: inline-block;
+            margin: 20px 0;
+            text-decoration: none;
+            color: #ecf0f1;
+            padding: 10px 20px;
+            background: #34495e;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .back-home:hover {
+            background: #1abc9c;
+        }
+
+        @keyframes slide-in {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header, #projects, footer {
+            animation: slide-in 1s ease-out;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Sudharshan Venkataraman</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="certifications.html">Certifications</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" class="back-home">Back to Home</a></li>
             </ul>
         </nav>
     </header>
@@ -34,6 +157,8 @@
     <footer>
         <p>&copy; 2024 Sudharshan Venkataraman. All rights reserved.</p>
     </footer>
-    <script src="script.js"></script>
+    <script>
+        // Custom JavaScript can be added here if needed
+    </script>
 </body>
 </html>
