@@ -4,7 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications | Sudharshan Venkataraman</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+        }
+
+        header h1 {
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        #publications h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .publication-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .publication-item {
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .publication-item h3 {
+            margin-top: 0;
+        }
+
+        .publication-item a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .publication-item a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -22,6 +101,24 @@
             </ul>
         </nav>
     </header>
-    <section id="publications">
-        <h2>Conferences and Publications</h2>
-        <ul>
+    <main>
+        <section id="publications">
+            <h2>Conferences and Publications</h2>
+            <div class="publication-list">
+                <article class="publication-item">
+                    <h3>Title of the Publication</h3>
+                    <p><strong>Authors:</strong> Your Name, Co-author Name</p>
+                    <p><strong>Conference/Journal:</strong> Conference or Journal Name</p>
+                    <p><strong>Year:</strong> Year of Publication</p>
+                    <p><strong>Abstract:</strong> A brief description of the publication.</p>
+                    <a href="link-to-publication" target="_blank">Read more</a>
+                </article>
+                <!-- Repeat the above <article> block for additional publications -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Sudharshan Venkataraman</p>
+    </footer>
+</body>
+</html>
