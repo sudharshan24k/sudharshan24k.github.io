@@ -110,16 +110,9 @@
     <header>
         <h1>Sudharshan Venkataraman</h1>
         <nav>
-            <ul>
+            
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="certifications.html">Certifications</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+               
         </nav>
     </header>
     <main>
@@ -127,17 +120,15 @@
             <h2>Contact Me</h2>
             <p>You can reach me via email or use the contact form below.</p>
             <p><strong>Email:</strong> <a href="mailto:sudharshan24k@gmail.com">sudharshan24k@gmail.com</a></p>
-            <form action="your-form-handler.php" method="post">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="6" required></textarea>
-                
-                <button type="submit">Send Message</button>
+            <form action="https://api.web3forms.com/submit" method="POST">
+
+                <input type="hidden" name="access_key" value="6c3e1c47-78d1-4561-bf4f-252543dd3b82">
+            
+                <input type="text" name="name" required>
+                <input type="email" name="email" required>
+                <textarea name="message" required></textarea>
+                <button type="submit">Submit Form</button>
+            
             </form>
         </section>
     </main>
