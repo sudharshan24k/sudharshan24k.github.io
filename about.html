@@ -22,12 +22,19 @@
             padding: 20px;
             background: #2c3e50;
             box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            animation: fadeIn 1s ease-out;
         }
 
         header h1 {
             margin: 0;
             font-size: 3em;
             color: #ecf0f1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: slideInFromLeft 1s ease-out;
         }
 
         nav ul {
@@ -35,6 +42,7 @@
             padding: 0;
             display: flex;
             gap: 15px;
+            margin-top: 10px;
         }
 
         nav ul li {
@@ -47,19 +55,25 @@
             padding: 10px 20px;
             background: #34495e;
             border-radius: 5px;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.3s;
         }
 
         nav ul li a:hover {
             background: #1abc9c;
+            transform: translateY(-3px);
         }
 
         #about {
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             padding: 50px 20px;
             background: url('https://source.unsplash.com/random/1600x900') no-repeat center center/cover;
             position: relative;
             color: #fff;
+            text-align: center;
+            min-height: 70vh;
         }
 
         #about::after {
@@ -76,6 +90,8 @@
             position: relative;
             font-size: 2.5em;
             margin-bottom: 20px;
+            z-index: 1;
+            animation: fadeInUp 1.5s ease-out;
         }
 
         #about p {
@@ -83,12 +99,18 @@
             font-size: 1.2em;
             max-width: 800px;
             margin: 0 auto;
+            z-index: 1;
+            animation: fadeInUp 2s ease-out;
         }
 
         footer {
             text-align: center;
             padding: 10px 20px;
             background: #2c3e50;
+            animation: fadeIn 2s ease-out;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
 
         footer p {
@@ -97,19 +119,35 @@
             color: #bdc3c7;
         }
 
-        @keyframes slide-in {
+        @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
-        }
-
-        header, #about, footer {
-            animation: slide-in 1s ease-out;
         }
     </style>
 </head>
