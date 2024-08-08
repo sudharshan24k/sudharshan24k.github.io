@@ -17,27 +17,41 @@
             background: #333;
             color: #fff;
             padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             margin: 0;
             text-align: center;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
         }
 
         nav ul {
             list-style: none;
             padding: 0;
             text-align: center;
+            margin: 10px 0 0;
         }
 
         nav ul li {
             display: inline;
-            margin: 0 15px;
+            margin: 0 10px;
         }
 
         nav ul li a {
             color: #fff;
             text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #f4f4f4;
         }
 
         main {
@@ -45,18 +59,20 @@
         }
 
         .skills-container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             background: #fff;
             border: 1px solid #ddd;
             border-radius: 8px;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
 
         .skills-container h2 {
             text-align: center;
             margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: #333;
         }
 
         .skills-section {
@@ -65,15 +81,48 @@
 
         .skills-section h3 {
             margin-bottom: 10px;
+            font-size: 1.8rem;
+            color: #444;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .skills-section h3::before {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 5px;
+            background: #333;
+            margin-right: 10px;
         }
 
         .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
             list-style: none;
             padding: 0;
         }
 
         .skills-list li {
-            margin-bottom: 8px;
+            background: #e0e0e0;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #333;
+            flex: 1 1 45%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .skills-list li:hover {
+            background: #ccc;
+            transform: scale(1.02);
         }
 
         footer {
@@ -109,29 +158,51 @@
             <div class="skills-section">
                 <h3>Programming Languages</h3>
                 <ul class="skills-list">
-                    <li>Python, C/C++, Java, R</li>
-                    <li>HTML, CSS, JavaScript, ReactJS, Node.js</li>
+                    <li>Python</li>
+                    <li>C/C++</li>
+                    <li>Java</li>
+                    <li>R</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>ReactJS</li>
+                    <li>Node.js</li>
                 </ul>
             </div>
             <div class="skills-section">
                 <h3>Machine Learning and AI</h3>
                 <ul class="skills-list">
-                    <li>Computer Vision, NLP, Deep Learning</li>
-                    <li>TensorFlow, PyTorch, LLMs, Gen-AI, ML Pipelines, Apache Spark</li>
+                    <li>Computer Vision</li>
+                    <li>NLP</li>
+                    <li>Deep Learning</li>
+                    <li>TensorFlow</li>
+                    <li>PyTorch</li>
+                    <li>LLMs</li>
+                    <li>Gen-AI</li>
+                    <li>ML Pipelines</li>
+                    <li>Apache Spark</li>
                 </ul>
             </div>
             <div class="skills-section">
                 <h3>Data Science Tools and Techniques</h3>
                 <ul class="skills-list">
-                    <li>Power BI, Tableau, Excel</li>
-                    <li>Probability, Statistics, Time Series, Hypothesis Testing</li>
+                    <li>Power BI</li>
+                    <li>Tableau</li>
+                    <li>Excel</li>
+                    <li>Probability</li>
+                    <li>Statistics</li>
+                    <li>Time Series</li>
+                    <li>Hypothesis Testing</li>
                 </ul>
             </div>
             <div class="skills-section">
                 <h3>Data Platforms and Cloud Services</h3>
                 <ul class="skills-list">
-                    <li>SQL, MongoDB</li>
-                    <li>AWS, Azure, GCP</li>
+                    <li>SQL</li>
+                    <li>MongoDB</li>
+                    <li>AWS</li>
+                    <li>Azure</li>
+                    <li>GCP</li>
                 </ul>
             </div>
         </section>
