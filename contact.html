@@ -17,11 +17,23 @@
             background: #333;
             color: #fff;
             padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease;
+        }
+
+        header:hover {
+            background: #444;
         }
 
         header h1 {
             margin: 0;
             text-align: center;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
         }
 
         nav ul {
@@ -38,6 +50,12 @@
         nav ul li a {
             color: #fff;
             text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #f4f4f4;
         }
 
         main {
@@ -51,17 +69,22 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
         }
 
         .contact-container h2 {
             text-align: center;
             margin-bottom: 20px;
+            font-size: 2rem;
+            color: #333;
         }
 
         .contact-container p {
             text-align: center;
             margin-bottom: 20px;
+            color: #666;
         }
 
         .contact-container form {
@@ -72,27 +95,69 @@
         .contact-container form label {
             margin-bottom: 5px;
             font-weight: bold;
+            color: #333;
         }
 
         .contact-container form input, 
         .contact-container form textarea {
             margin-bottom: 15px;
-            padding: 10px;
+            padding: 12px;
             border: 1px solid #ddd;
             border-radius: 4px;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-container form input:focus, 
+        .contact-container form textarea:focus {
+            border-color: #333;
+            outline: none;
         }
 
         .contact-container form button {
-            padding: 10px;
+            padding: 12px;
             background: #333;
             color: #fff;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease, transform 0.3s ease;
         }
 
         .contact-container form button:hover {
             background: #555;
+            transform: scale(1.05);
+        }
+
+        .contact-container form button:active {
+            transform: scale(0.98);
+        }
+
+        .thank-you-message {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background: #4caf50;
+            color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-size: 1.2rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -40%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
         }
 
         footer {
@@ -110,30 +175,49 @@
     <header>
         <h1>Sudharshan Venkataraman</h1>
         <nav>
-            
+            <ul>
                 <li><a href="index.html">Home</a></li>
-               
+            </ul>
         </nav>
     </header>
     <main>
         <section class="contact-container">
             <h2>Contact Me</h2>
-            <p>You can reach me via email or use the contact form below.</p>
+            <p>You can reach me through the contact form below.</p>
             <p><strong>Email:</strong> <a href="mailto:sudharshan24k@gmail.com">sudharshan24k@gmail.com</a></p>
-            <form action="https://api.web3forms.com/submit" method="POST">
-
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
                 <input type="hidden" name="access_key" value="6c3e1c47-78d1-4561-bf4f-252543dd3b82">
-            
-                <input type="text" name="name" required>
-                <input type="email" name="email" required>
-                <textarea name="message" required></textarea>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
                 <button type="submit">Submit Form</button>
-            
+                <div class="thank-you-message" id="thank-you-message">
+                    Thank you for contacting me! I'll get back to you shortly.
+                </div>
             </form>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Sudharshan Venkataraman</p>
     </footer>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const form = event.target;
+            const thankYouMessage = document.getElementById('thank-you-message');
+
+            // Simulate a form submission delay
+            setTimeout(() => {
+                form.reset();
+                thankYouMessage.style.display = 'block';
+                setTimeout(() => {
+                    thankYouMessage.style.display = 'none';
+                }, 3000);
+            }, 500);
+        });
+    </script>
 </body>
 </html>
