@@ -4,63 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Sudharshan Venkataraman</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Nunito', sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background: linear-gradient(to right, #1c1c1c, #383838);
-            color: #fff;
+            background: #f4f4f9;
+            color: #333;
+            overflow-x: hidden;
         }
 
         header {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            padding: 20px;
-            background: #2c3e50;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-            position: sticky;
-            top: 0;
-            width: 100%;
+            padding: 20px 10%;
+            background-color: #ffffff;
+            border-bottom: 2px solid #e3e3e3;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: relative;
             z-index: 1000;
-            animation: fadeIn 1s ease-out;
         }
 
         header h1 {
             margin: 0;
-            font-size: 3em;
-            color: #ecf0f1;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            animation: slideInFromLeft 1s ease-out;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            color: #333;
+            letter-spacing: 1px;
+        }
+
+        .menu-toggle {
+            font-size: 1.5em;
+            cursor: pointer;
+            background: none;
+            border: none;
+            outline: none;
+            color: #333;
+            transition: transform 0.3s;
+        }
+
+        .menu-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: -250px; /* Hidden by default */
+            width: 250px;
+            height: 100%;
+            background: #ff5a5f;
+            padding-top: 60px;
+            transition: left 0.3s;
+            box-shadow: 2px 0 8px rgba(0,0,0,0.2);
         }
 
         nav ul {
             list-style: none;
             padding: 0;
-            display: flex;
-            gap: 15px;
-            margin-top: 10px;
-        }
-
-        nav ul li {
             margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding-left: 20px;
         }
 
         nav ul li a {
             text-decoration: none;
-            color: #ecf0f1;
-            padding: 10px 20px;
-            background: #34495e;
-            border-radius: 5px;
-            transition: background 0.3s, transform 0.3s;
+            color: #ffffff;
+            font-weight: 700;
+            padding: 10px 0;
+            transition: color 0.3s;
         }
 
         nav ul li a:hover {
-            background: #1abc9c;
-            transform: translateY(-3px);
+            color: #feb47b;
+        }
+
+        nav.active {
+            left: 0; /* Show the menu */
         }
 
         #about {
@@ -68,114 +94,73 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 50px 20px;
-            background: url('https://source.unsplash.com/random/1600x900') no-repeat center center/cover;
-            position: relative;
-            color: #fff;
+            padding: 80px 10%;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: #ffffff;
             text-align: center;
-            min-height: 70vh;
-        }
-
-        #about::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
+            min-height: 60vh;
+            border-radius: 8px;
+            margin: 30px 10%;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
 
         #about h2 {
-            position: relative;
-            font-size: 2.5em;
+            font-family: 'Playfair Display', serif;
+            font-size: 3em;
             margin-bottom: 20px;
-            z-index: 1;
-            animation: fadeInUp 1.5s ease-out;
         }
 
         #about p {
-            position: relative;
             font-size: 1.2em;
             max-width: 800px;
-            margin: 0 auto;
-            z-index: 1;
-            animation: fadeInUp 2s ease-out;
+            line-height: 1.6;
         }
 
         footer {
             text-align: center;
-            padding: 10px 20px;
-            background: #2c3e50;
-            animation: fadeIn 2s ease-out;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            padding: 20px 10%;
+            background: #ffffff;
+            border-top: 2px solid #e3e3e3;
+            box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
         }
 
         footer p {
             margin: 0;
             font-size: 1em;
-            color: #bdc3c7;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideInFromLeft {
-            from {
-                transform: translateX(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            color: #777;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Sudharshan Venkataraman</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="certifications.html">Certifications</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
     </header>
+    <nav id="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
     <section id="about">
         <h2>About Me</h2>
-        <p>As a Computer Science Engineering student at VIT, Vellore, I am passionate about software development and machine learning. I leverage data-driven insights to drive impactful decisions and collaborate across teams to translate analytical findings into business outcomes. Combining software development skills with AI, I deliver innovative, scalable solutions.</p>
+        <p>As a Computer Science Engineering student at VIT, Vellore, I am passionate about software development and machine learning...</p>
     </section>
     <footer>
         <p>&copy; 2024 Sudharshan Venkataraman. All rights reserved.</p>
     </footer>
+
     <script>
-        // Custom JavaScript can be added here if needed
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
     </script>
 </body>
 </html>
